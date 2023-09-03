@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Parallax</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">Bungas</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Support</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="images/stars.png" id="stars" alt="">
+        <img src="images/moon.png" id="moon" alt="">
+        <h2 id="text">Bungas</h2>
+        <a href="#sec" class="btn" id="btn">Bungas Fanhas</a>
+        <img src="images/mountains_behind.png" id="mountains_behind" alt="">
+        <img src="images/mountains_front.png" id="mountains_front" alt="">
+    </section>
+
+    <div class="sec" id="sec">
+        <h2>Parallax Scroll Effect</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum minima asperiores ex quia iste quos. Harum consectetur sed, ducimus alias quibusdam voluptatum repudiandae illo dicta in porro dolore eveniet corrupti. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur deleniti doloremque id odit! Repudiandae, distinctio. Ipsum sint similique facilis earum distinctio ipsam repellat veritatis, quibusdam, temporibus reprehenderit quo, corporis consectetur? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum veniam velit, ad, ipsa sapiente temporibus culpa ea eos cumque saepe ab at consequatur, corporis in! Consequuntur expedita a dolorum aperiam!<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum minima asperiores ex quia iste quos. Harum consectetur sed, ducimus alias quibusdam voluptatum repudiandae illo dicta in porro dolore eveniet corrupti. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur deleniti doloremque id odit! Repudiandae, distinctio. Ipsum sint similique facilis earum distinctio ipsam repellat veritatis, quibusdam, temporibus reprehenderit quo, corporis consectetur? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum veniam velit, ad, ipsa sapiente temporibus culpa ea eos cumque saepe ab at consequatur, corporis in! Consequuntur expedita a dolorum aperiam!<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum minima asperiores ex quia iste quos. Harum consectetur sed, ducimus alias quibusdam voluptatum repudiandae illo dicta in porro dolore eveniet corrupti. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur deleniti doloremque id odit! Repudiandae, distinctio. Ipsum sint similique facilis earum distinctio ipsam repellat veritatis, quibusdam, temporibus reprehenderit quo, corporis consectetur? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum veniam velit, ad, ipsa sapiente temporibus culpa ea eos cumque saepe ab at consequatur, corporis in! Consequuntur expedita a dolorum aperiam!
+        </p>
+    </div>
+
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let mountains_front = document.getElementById('mountains_front');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let header = document.querySelector('header');
+    
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.8 + 'px';
+            header.style.marginTop = value * 0.5 + 'px';
+        });
+    </script>
+
+</body>
+</html>
